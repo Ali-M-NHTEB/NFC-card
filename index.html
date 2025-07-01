@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ali Mammadov - Digital Business Card</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('earthrise.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card-container {
+      background: rgba(0, 0, 0, 0.7);
+      max-width: 400px;
+      width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      overflow: hidden;
+      animation: slideIn 0.8s ease-out;
+      color: #fff;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(40px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .profile-image {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 15px;
+      border: 3px solid #fff;
+    }
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .name { font-size: 24px; font-weight: bold; }
+    .title { font-size: 14px; opacity: 0.9; }
+    .company { font-size: 13px; opacity: 0.8; }
+    .content { padding: 25px; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+    }
+    .contact-item i {
+      font-size: 18px;
+      margin-right: 15px;
+    }
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 25px;
+    }
+    .social-link {
+      text-decoration: none;
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      font-size: 30px;
+      min-width: 60px;
+      min-height: 60px;
+    }
+    .social-link:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    @media (max-width: 480px) {
+      .name { font-size: 20px; }
+      .title, .company { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="header">
+      <div class="profile-image">
+        <img src="ali-mammadov-profile.jpg" alt="Ali Mammadov Profile">
+      </div>
+      <div class="name">Ali Mammadov</div>
+      <div class="title">Climate Activist, Sustainability Manager & Space Enthusiast</div>
+      <div class="company">COP29 Sustainability Manager</div>
+    </div>
+    <div class="content">
+      <a href="mailto:contact@alimammadov.com" class="contact-item">
+        <i class="fas fa-envelope"></i> contact@alimammadov.com
+      </a>
+      <a href="https://www.alimammadov.com" class="contact-item" target="_blank">
+        <i class="fas fa-globe"></i> www.alimammadov.com
+      </a>
+      <div class="social-links">
+        <a class="social-link" href="https://www.linkedin.com/in/ali-etbn" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a class="social-link" href="https://x.com/9562ali" target="_blank">
+          <i class="fas fa-times"></i>
+        </a>
+        <a class="social-link" href="https://github.com/Ali-M-NHTEB" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="social-link" href="https://alimammadov.com/portfolio" target="_blank">
+          <i class="fas fa-globe-americas"></i>
+        </a>
+        <a class="social-link" href="https://www.instagram.com/ali.etbn" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
