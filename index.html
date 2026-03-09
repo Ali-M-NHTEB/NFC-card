@@ -31,7 +31,6 @@
       padding: 16px;
     }
 
-    /* Very light overlay — just enough contrast, earth stays vivid */
     body::before {
       content: '';
       position: fixed;
@@ -60,7 +59,6 @@
       to   { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    /* ── Header ── */
     .header {
       position: relative;
       text-align: center;
@@ -86,6 +84,9 @@
       overflow: hidden;
     }
 
+    /* ⬇️ ADJUST THESE TWO VALUES TO REPOSITION YOUR FACE:
+       background-size: 180%  → zoom (bigger = more zoomed in)
+       background-position: center 8%  → vertical (higher % = lower in frame) */
     .avatar-photo {
       width: 100%;
       height: 100%;
@@ -93,18 +94,6 @@
       background: url('ali-mammadov-profile.jpg') no-repeat;
       background-size: 180%;
       background-position: center 8%;
-    }
-
-    /* Fallback initials if image missing */
-    .avatar-fallback {
-      width: 100%; height: 100%;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #1a3a5c, #0d2137);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Syne', sans-serif;
-      font-size: 28px; font-weight: 800;
-      letter-spacing: -1px;
-      color: var(--accent);
     }
 
     .name {
@@ -125,62 +114,7 @@
       margin: 0 auto 4px;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 10px;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-      background: rgba(79,195,247,0.12);
-      border: 1px solid rgba(79,195,247,0.25);
-      color: var(--accent);
-    }
-
-    .badge i { font-size: 10px; }
-
-    /* ── Content ── */
-    .content { padding: 28px 28px 24px; }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 11px 14px;
-      border-radius: 12px;
-      text-decoration: none;
-      color: var(--text);
-      font-size: 13.5px;
-      font-weight: 400;
-      margin-bottom: 8px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      transition: background 0.2s, border-color 0.2s, transform 0.2s;
-    }
-
-    .contact-item:hover {
-      background: rgba(79,195,247,0.08);
-      border-color: rgba(79,195,247,0.25);
-      transform: translateX(3px);
-    }
-
-    .contact-icon {
-      width: 34px; height: 34px;
-      border-radius: 8px;
-      background: rgba(79,195,247,0.1);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .contact-icon i { font-size: 14px; color: var(--accent); }
-
-    /* ── Social Grid ── */
-    .social-section {
-      padding: 0 28px 28px;
-    }
+    .social-section { padding: 0 28px 28px; }
 
     .social-label {
       font-size: 10px;
@@ -189,12 +123,6 @@
       text-transform: uppercase;
       color: var(--muted);
       margin-bottom: 14px;
-    }
-
-    .social-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
     }
 
     .social-link {
@@ -225,38 +153,23 @@
 
     .social-link:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
     .social-link:hover::before { opacity: 1; }
-
     .social-link i { font-size: 22px; position: relative; z-index: 1; }
-
     .social-link span {
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-      opacity: 0.7;
-      position: relative;
-      z-index: 1;
+      font-size: 9px; font-weight: 500;
+      letter-spacing: 0.3px; opacity: 0.7;
+      position: relative; z-index: 1;
     }
-
-    /* Per-network colors on hover */
-    .sl-linkedin { --c: #0077b5; }
-    .sl-x        { --c: #e7e7e7; }
-    .sl-github   { --c: #f0f6fc; }
-    .sl-portfolio{ --c: #4fc3f7; }
-    .sl-instagram{ --c: #e1306c; }
 
     .sl-linkedin::before  { background: rgba(0,119,181,0.15); }
     .sl-x::before         { background: rgba(231,231,231,0.1); }
     .sl-github::before    { background: rgba(240,246,252,0.1); }
-    .sl-portfolio::before { background: rgba(79,195,247,0.12); }
     .sl-instagram::before { background: linear-gradient(135deg, rgba(225,48,108,0.15), rgba(253,140,0,0.12)); }
 
     .sl-linkedin:hover i  { color: #4fc3f7; }
     .sl-x:hover i         { color: #e7e7e7; }
     .sl-github:hover i    { color: #f0f6fc; }
-    .sl-portfolio:hover i { color: #4fc3f7; }
     .sl-instagram:hover i { color: #e1306c; }
 
-    /* ── Footer ── */
     .footer {
       text-align: center;
       padding: 14px 20px 20px;
@@ -273,7 +186,6 @@
       .avatar-ring { width: 104px; height: 104px; }
       .social-link { padding: 14px 4px; }
       .social-link i { font-size: 22px; }
-      .social-link span { font-size: 9px; }
       .social-section { padding: 0 20px 24px; }
       .header { padding: 32px 20px 24px; }
     }
@@ -282,22 +194,17 @@
 <body>
   <div class="card-container">
 
-    <!-- Header -->
     <div class="header">
       <div class="avatar-ring">
         <div class="avatar-photo"></div>
       </div>
       <div class="name">Ali Mammadov</div>
       <div class="title">Climate Activist · Sustainability Manager · Space Enthusiast</div>
-
     </div>
 
-
-
-    <!-- Social Links -->
     <div class="social-section">
       <div class="social-label">Connect</div>
-      <div class="social-grid" style="grid-template-columns: repeat(4, 1fr);">
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px;">
 
         <a class="social-link sl-linkedin" href="https://www.linkedin.com/in/ali-etbn" target="_blank">
           <i class="fab fa-linkedin-in"></i>
@@ -305,8 +212,8 @@
         </a>
 
         <a class="social-link sl-x" href="https://x.com/9562ali" target="_blank">
-          <i style="display:flex; align-items:center; justify-content:center;">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <i style="display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.261 5.632 5.903-5.632Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
           </i>
@@ -326,7 +233,6 @@
       </div>
     </div>
 
-    <!-- Footer -->
     <div class="footer">
       Tap any link · NFC enabled · © 2025 Ali Mammadov
     </div>
