@@ -10,7 +10,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --glass: rgba(255,255,255,0.07);
+      --glass: rgba(0,10,25,0.45);
       --glass-border: rgba(255,255,255,0.15);
       --accent: #4fc3f7;
       --accent2: #81c784;
@@ -20,7 +20,7 @@
 
     body {
       font-family: 'DM Sans', sans-serif;
-      background: url('earthrise.jpg') no-repeat center center fixed;
+      background: url('earthrise.jpg') no-repeat center 30% fixed;
       background-size: cover;
       color: var(--text);
       min-height: 100vh;
@@ -30,12 +30,12 @@
       padding: 20px;
     }
 
-    /* Dark overlay */
+    /* Dark overlay — lighter so earth is visible */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
-      background: linear-gradient(160deg, rgba(0,20,40,0.82) 0%, rgba(0,10,25,0.75) 100%);
+      background: linear-gradient(160deg, rgba(0,10,25,0.45) 0%, rgba(0,5,15,0.55) 100%);
       z-index: 0;
     }
 
@@ -88,6 +88,7 @@
       width: 100%; height: 100%;
       border-radius: 50%;
       object-fit: cover;
+      object-position: center top;
       display: block;
       background: #1a2a3a;
     }
