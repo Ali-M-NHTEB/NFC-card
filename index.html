@@ -10,7 +10,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --glass: rgba(0,10,25,0.45);
+      --glass: rgba(0, 8, 20, 0.38);
       --glass-border: rgba(255,255,255,0.15);
       --accent: #4fc3f7;
       --accent2: #81c784;
@@ -20,8 +20,8 @@
 
     body {
       font-family: 'DM Sans', sans-serif;
-      background: url('earthrise.jpg') no-repeat center 20%;
-      background-size: 170%;
+      background: url('earthrise.jpg') no-repeat center center;
+      background-size: cover;
       color: var(--text);
       min-height: 100vh;
       min-height: 100dvh;
@@ -31,12 +31,12 @@
       padding: 16px;
     }
 
-    /* Dark overlay — lighter so earth is visible */
+    /* Very light overlay — just enough contrast, earth stays vivid */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
-      background: linear-gradient(160deg, rgba(0,10,25,0.45) 0%, rgba(0,5,15,0.55) 100%);
+      background: rgba(0, 8, 20, 0.30);
       z-index: 0;
     }
 
@@ -77,27 +77,28 @@
     }
 
     .avatar-ring {
-      width: 110px; height: 110px;
+      width: 116px; height: 116px;
       margin: 0 auto 20px;
       border-radius: 50%;
       padding: 3px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       box-shadow: 0 0 0 5px rgba(79,195,247,0.12), 0 10px 28px rgba(0,0,0,0.5);
+      overflow: hidden;
     }
 
     .avatar-ring img {
       width: 100%; height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      object-position: center 60%;
+      object-position: center 20%;
       display: block;
       background: #1a2a3a;
     }
 
     /* Fallback initials if image missing */
     .avatar-fallback {
-      width: 100%; height: 120%;
-      border-radius: 60%;
+      width: 100%; height: 100%;
+      border-radius: 50%;
       background: linear-gradient(135deg, #1a3a5c, #0d2137);
       display: flex; align-items: center; justify-content: center;
       font-family: 'Syne', sans-serif;
@@ -266,10 +267,10 @@
     }
 
     @media (max-width: 480px) {
-      body { padding: 12px; background-size: 160%; background-position: center 18%; }
+      body { padding: 12px; }
       .name { font-size: 21px; }
       .title { font-size: 11.5px; }
-      .avatar-ring { width: 100px; height: 100px; }
+      .avatar-ring { width: 104px; height: 104px; }
       .social-link { padding: 14px 4px; }
       .social-link i { font-size: 22px; }
       .social-link span { font-size: 9px; }
