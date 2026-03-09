@@ -20,14 +20,15 @@
 
     body {
       font-family: 'DM Sans', sans-serif;
-      background: url('earthrise.jpg') no-repeat center 30% fixed;
-      background-size: cover;
+      background: url('earthrise.jpg') no-repeat center 20%;
+      background-size: 140%;
       color: var(--text);
       min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 16px;
     }
 
     /* Dark overlay — lighter so earth is visible */
@@ -43,13 +44,13 @@
       position: relative;
       z-index: 1;
       background: var(--glass);
-      backdrop-filter: blur(24px) saturate(1.4);
-      -webkit-backdrop-filter: blur(24px) saturate(1.4);
-      max-width: 390px;
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      max-width: 420px;
       width: 100%;
       border-radius: 28px;
       border: 1px solid var(--glass-border);
-      box-shadow: 0 32px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.12);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.12);
       overflow: hidden;
       animation: rise 0.75s cubic-bezier(0.22,1,0.36,1) both;
     }
@@ -63,8 +64,8 @@
     .header {
       position: relative;
       text-align: center;
-      padding: 44px 28px 32px;
-      background: linear-gradient(180deg, rgba(79,195,247,0.08) 0%, transparent 100%);
+      padding: 40px 24px 28px;
+      background: linear-gradient(180deg, rgba(79,195,247,0.07) 0%, transparent 100%);
     }
 
     .header::after {
@@ -76,19 +77,19 @@
     }
 
     .avatar-ring {
-      width: 96px; height: 96px;
-      margin: 0 auto 18px;
+      width: 110px; height: 110px;
+      margin: 0 auto 20px;
       border-radius: 50%;
       padding: 3px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 4px rgba(79,195,247,0.12), 0 8px 24px rgba(0,0,0,0.4);
+      box-shadow: 0 0 0 5px rgba(79,195,247,0.12), 0 10px 28px rgba(0,0,0,0.5);
     }
 
     .avatar-ring img {
       width: 100%; height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      object-position: center top;
+      object-position: center 15%;
       display: block;
       background: #1a2a3a;
     }
@@ -264,11 +265,16 @@
       border-top: 1px solid rgba(255,255,255,0.06);
     }
 
-    @media (max-width: 400px) {
-      .name { font-size: 20px; }
-      .social-grid { grid-template-columns: repeat(5, 1fr); gap: 8px; }
-      .social-link { padding: 12px 4px; }
-      .social-link i { font-size: 20px; }
+    @media (max-width: 480px) {
+      body { padding: 12px; background-size: 160%; background-position: center 18%; }
+      .name { font-size: 21px; }
+      .title { font-size: 11.5px; }
+      .avatar-ring { width: 100px; height: 100px; }
+      .social-link { padding: 14px 4px; }
+      .social-link i { font-size: 22px; }
+      .social-link span { font-size: 9px; }
+      .social-section { padding: 0 20px 24px; }
+      .header { padding: 32px 20px 24px; }
     }
   </style>
 </head>
